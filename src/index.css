@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  font-family: 'Work Sans', 'sans-serif';
+  font-size: 3.5vh;
+}
+
+.App {
+  padding: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.App > h1 {
+  font-family: 'Silkscreen', 'sans-serif';
+  font-size: 6.5vh;
+}
+
+.add-task {
+  padding-top: 60px;
+}
+
+.add-task > input {
+  margin-right: 20px;
+}
+
+.tasks-list {
+  padding-top: 40px;
+}
