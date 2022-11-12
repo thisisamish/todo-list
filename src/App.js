@@ -1,30 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
+import CreateTodo from "./components/CreateTodo";
+import Navbar from "./components/Navbar";
+import TodoList from "./components/TodoList";
 
 function App() {
-  const [inputText, setInputText] = useState();
-  const [todoArray, setTodoArray] = useState([]);
+  const [todoArray, setTodoArray] = useState(["Hello, mom!", "Hi dad!"]);
 
-  function handleChange(event) {
-    setInputText(event.target.value);
-  }
-
-  function handleClick() {
-    setTodoArray(prevValue => [...prevValue, inputText]);
-    setInputText("");
-  }
-
+  useEffect(() => {}, [todoArray]);
   return (
     <div className="App">
-      <h1>Amish's Todo List</h1>
-      <div className="add-task">
-        <input onChange={handleChange} value={inputText} type="text" />
-        <button onClick={handleClick}>Add Task</button>
-      </div>
-      <div className="tasks-list">
-        <ul>
-          <li>{todoArray.map(todoItem => <li>{todoItem}</li>)}</li>
-        </ul>
-      </div>
+      <Navbar />
+      <CreateTodo />
+      <p>Your Todos</p>
+      <TodoList todoArray={todoArray} />
+      <Footer />
     </div>
   );
 }
